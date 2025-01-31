@@ -1,4 +1,9 @@
-def uni(arr):
+def uni():
+    n=int(input("length of list "))
+    arr=[]  
+    for i in range(n):
+        q=int(input('enter a num '))
+        arr.append(q)
     qwe=[]
     cnt=0
     for i in arr:
@@ -11,9 +16,5 @@ def uni(arr):
     return qwe
         
 
-n=int(input("length of list "))
-arr=[]  
-for i in range(n):
-    q=int(input('enter a num '))
-    arr.append(q)
-print(uni(arr))
+
+print(uni())

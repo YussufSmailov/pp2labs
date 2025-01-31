@@ -1,5 +1,6 @@
-def temp(F):
+def temp():
+    F=int(input("enter temp in farenheit"))
     C = (5 / 9) * (F - 32)
     return C
-F=int(input("enter temp in farenheit"))
-print(temp(F))
+
+print(temp())

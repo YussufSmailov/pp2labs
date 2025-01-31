@@ -1,5 +1,10 @@
-def filter_prime(arr):
-    cnt=0
+def filter_prime():
+    n=int(input("length of list "))
+    arr=[]
+    for i in range(n):
+        q=int(input('enter a num'))
+        arr.append(q)
+        cnt=0
     prime=[]
     for ch in arr:
         cnt=0
@@ -11,9 +16,5 @@ def filter_prime(arr):
     return prime
 
 
-n=int(input("length of list "))
-arr=[]
-for i in range(n):
-    q=int(input('enter a num'))
-    arr.append(q)
-print(filter_prime(arr))
+
+print(filter_prime())

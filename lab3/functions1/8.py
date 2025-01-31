@@ -1,4 +1,9 @@
-def spy_game(arr):
+def spy_game():
+    n=int(input("length of list "))
+    arr=[]
+    for i in range(n):
+        q=int(input('enter a num '))
+        arr.append(q)
     s=""
     for i in arr:
         s+=str(i)
@@ -6,9 +11,5 @@ def spy_game(arr):
         return "True"
     else:
         return "False"
-n=int(input("length of list "))
-arr=[]
-for i in range(n):
-    q=int(input('enter a num '))
-    arr.append(q)
-print(spy_game(arr))
+
+print(spy_game())

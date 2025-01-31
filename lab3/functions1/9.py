@@ -1,5 +1,6 @@
 
-def volume(r):
+def volume():
+    r=int(input('enter a radius'))
     return 4/3*3.14*r
-r=int(input('enter a radius'))
-print("volume is", volume(r))
+
+print("volume is", volume())

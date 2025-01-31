@@ -1,4 +1,5 @@
-def rev(sen):
+def rev():
+    sen=input("enter a sentence ")
     arr=sen.split()
     arr.reverse()
     s=""
@@ -9,5 +10,4 @@ def rev(sen):
     return s
 
 
-sen=input("enter a sentence ")
-print(rev(sen))
+print(rev())
