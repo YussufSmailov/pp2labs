@@ -1,4 +1,4 @@
-def histogram(arr):
+def histogram():
     n=int(input("length of list "))
     arr=[]
     for i in range(n):

@@ -1,4 +1,4 @@
-def palin(s):
+def palin():
     s=input("enter a string ")
     n=s
     b=s[::-1]
