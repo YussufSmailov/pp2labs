@@ -78,22 +78,16 @@ movies = [
 }
 ]
 
-#1
+
 def first(movies):
-    good={}
+    a=input('MOVIE NAME: ')
     for films in movies:
-        if films["imdb"]>5.5:
-            good.update({films["name"]:True})
-    return good
+        if films['name']==a and films['imdb']>5.5:
+            return True
 print(first(movies))
 print()
 print()
 print()
-
-
-
-
-
 
 
 
@@ -109,24 +103,21 @@ print()
 print()
 print()
 
+
+
 #3
 def third(movies):
-    cat=[]
-    for films in movies:
-        cat.append(films['category'])
-    ar3=list(set(cat))
-    mydict={}
-    for c in ar3:
-        mydict.update({c:[]})
-    for c in ar3:
-        for films in movies:
-            if films["category"]==c:
-                mydict[c].append(films["name"])
+    cat=input("CATEGORY: ")
+    mydict={cat:[]}
+    for film in movies:
+        if film['category']==cat:
+            mydict[cat].append(film['name'])
     return mydict
 print(third(movies))
 print()
 print()
 print()
+
 
 
 #4
@@ -142,23 +133,13 @@ print()
 
 #5
 def fifth(movies):
-    arr=[]
-    avg=0
+    cat=input("CATEGORY: ")
+    sum=0
     cnt=0
-    total=0
-    for mov in movies:
-        arr.append(mov['category'])
-    categor=list(set(arr))
-    d={}
-    for cat in categor:
-        avg=0
-        cnt=0
-        for film in movies:
-            if film["category"]==cat:
-                avg+=film["imdb"]
-                cnt+=1
-        total=avg/cnt
-        d.update({str(cat):total})
-    return d
-        
+    for films in movies:
+        if films['category']==cat:
+            sum+=films['imdb']
+            cnt+=1
+    return sum/cnt
 print(fifth(movies))
+
