@@ -1,11 +1,11 @@
-class answer:
+class Output:
     def __init__(self):
-        self.userstr = ''
+       pass
     def getstring(self):
-        self.userstr = str(input())
+        self.name=input("vvedi chtoto: ")
     def printstring(self):
-        self.userstr = print(self.userstr.upper())
-        self.userstr
-ans = answer()
-ans.getstring()
-ans.printstring()
+        print(self.name.upper())
+
+chtoto=Output()
+chtoto.getstring()
+chtoto.printstring()

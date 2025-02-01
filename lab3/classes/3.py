@@ -1,18 +1,16 @@
-class Shape():
-    def __init__(self):
-        pass
+class Shape:
+    def __init__ (self, length, width):
+        self.length=length
+        self.width=width
     def area(self):
-        return 0
-class Square(Shape):
-    def __init__(self , a , b):
-        super().__init__()
-        self.a = a
-        self.b = b
+        print("default area is 0")
+    
+class Rectangle(Shape):
+    def __init__ (self, length, width):
+        super().__init__(length, width)
     def area(self):
-        return self.a *self.b
-answer = Shape()
-a = int(input("Your a: "))
-b = int(input("Your b: "))
-print("defoult area: " , answer.area())
-inp_ar = Square(a , b)
-print("your area: " , inp_ar.area())
+        print(f"area is {self.width*self.length}")
+dlina=int(input("vvedi dlinu "))
+shirina=int(input("vvedi shirinu "))
+rectangle=Rectangle(dlina, shirina)
+rectangle.area()
