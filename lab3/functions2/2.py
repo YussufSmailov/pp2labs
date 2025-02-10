@@ -93,11 +93,10 @@ print()
 
 #2
 def second(movies):
-    ar=[]
-    for mov in movies:
-        if mov['imdb']>5.5:
-            ar.append(mov['name'])
-    return ar
+    arr=[]
+    for each in movies:
+        if each['imdb'] >5.5
+        arr.append(each)
 print(second(movies))
 print()
 print()
