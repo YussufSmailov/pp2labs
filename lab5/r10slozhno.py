@@ -4,6 +4,8 @@ snake= "this_is_camel_case"
 p=r'[A-Z]'
 l=re.findall(p, camel)
 res=re.split(p, camel)
+print(l)
+print(res)
 
 while "" in res:
     res.remove("")
