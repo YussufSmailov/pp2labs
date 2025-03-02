@@ -1,6 +1,7 @@
 s=input()
-s.split()
+
 cnt=0
 
-a=len(list(filter(lambda x: ord('Z')>=ord(x)>=ord('A'), s)))
-print(a)
+upp=len(list(filter(lambda x: ord('Z')>=ord(x)>=ord('A'), s)))
+low=len(list(filter(lambda x: ord('z')>=ord(x)>=ord('a'), s)))
+print(f"there are {upp} uppercase letters and {low} lowercase letters")
