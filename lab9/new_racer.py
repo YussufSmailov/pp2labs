@@ -35,6 +35,7 @@ snd_crash = pygame.mixer.Sound(r"C:\Users\irresible\Desktop\pp2labs\lab9\recourc
 clock = pygame.time.Clock()
 fps = 60
 
+#класс игрока
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
@@ -54,7 +55,7 @@ class Player(pygame.sprite.Sprite):
             self.rect.left = 0
         if self.rect.right > WIDTH:
             self.rect.right = WIDTH
-
+#класс врага
 class Enemy(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
@@ -71,7 +72,7 @@ class Enemy(pygame.sprite.Sprite):
         self.rect.move_ip(0, self.speed)
         if self.rect.top > HEIGHT:
             self.generate_random_rect()
-
+#класс обычных монет
 class Coins(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
@@ -88,7 +89,7 @@ class Coins(pygame.sprite.Sprite):
         self.rect.move_ip(0, self.speed)
         if self.rect.top > HEIGHT:
             self.random_rect()
-
+#класс монет с рандомным весом
 class Coins_new(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
@@ -113,7 +114,7 @@ coin = Coins()
 player = Player()
 enemy = Enemy()
 newcoin = Coins_new()
-
+#создание спрайтов
 all_sprites = pygame.sprite.Group(player, enemy, coin, newcoin)
 enemy_sprites = pygame.sprite.Group(enemy)
 coin_sprites = pygame.sprite.Group(coin)
@@ -131,7 +132,7 @@ while running:
     for entity in all_sprites:
         entity.move()
         screen.blit(entity.image, entity.rect)
-
+    #проверки на коллизию
     if pygame.sprite.spritecollideany(player, enemy_sprites):
         snd_crash.play()
         time.sleep(1)
@@ -159,7 +160,7 @@ while running:
     
     if n != 0 and n % 4 == 0:
         fps += 0.3
-
+#вывод изображения
     screen.blit(image_counter, image_counter_rect)
     screen.blit(image_weigh, image_weigh_rect)
 

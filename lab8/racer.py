@@ -15,27 +15,27 @@ font = pygame.font.SysFont("Verdana", 60)          # создаю изображ
 image_game_over = font.render("Game Over", True, "black")
 image_game_over_rect = image_game_over.get_rect(center = (WIDTH // 2, HEIGHT // 2)) 
 n=0
-image_counter=font.render(f"{n}", True, "black")
+image_counter=font.render(f"{n}", True, "black")            #cчетчик реализовал через фстроку 
 image_counter_rect = image_counter.get_rect(center = (370, 30))
 
 pygame.mixer.music.load('background.wav')
-pygame.mixer.music.play(-1)
+pygame.mixer.music.play(-1)               #чтобы играла все время
 snd_crash=pygame.mixer.Sound("crash.wav")
 clock=pygame.time.Clock()
 fps=60
 
 class Player(pygame.sprite.Sprite):
     def __init__(self):
-        super().__init__()
+        super().__init__()          
         self.image=img_player   #создаю плеера и помещаю его
         self.rect=self.image.get_rect()
-        self.rect.centerx=WIDTH//2
+        self.rect.centerx=WIDTH//2              #ставлю в середину внизу
         self.rect.bottom=HEIGHT
         self.speed = 5
     def move(self):
         keys=pygame.key.get_pressed()           #плеер реагирует на нажатие клавиш
         if keys[pygame.K_RIGHT]:
-            self.rect.move_ip(self.speed, 0)
+            self.rect.move_ip(self.speed, 0)       #мув_ип перемещает игрока на (х, у)
         if keys[pygame.K_LEFT]:
             self.rect.move_ip(-self.speed, 0)
         if self.rect.left<0:
@@ -91,7 +91,7 @@ while running:
     
     #     screen.blit(entity.image, entity.rect )
     for entity in all_sprites:
-        entity.move()
+        entity.move()                                   #примянеем метод один раз ко всем составляющим спрайта
         screen.blit(entity.image, entity.rect)
     if pygame.sprite.spritecollideany(player, enemy_sprites):
         snd_crash.play()
