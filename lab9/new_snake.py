@@ -15,7 +15,7 @@ cnt = 0
 level_up_shown = False
 level = 0
 cnt_weigh = 0
-
+#делим экран на клетки
 def draw_grid():
     for i in range(HEIGHT // CELL):
         for j in range(WIDTH // CELL):
@@ -25,7 +25,7 @@ class Point:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-
+#класс змейки
 class Snake:
     def __init__(self):
         self.body = [Point(10, 11), Point(10, 12), Point(10, 13)]
@@ -61,7 +61,7 @@ class Snake:
             self.body.append(Point(head.x, head.y))
             food.generate_random_pos()
             return True
-
+#класс еда
 class Food:
     def __init__(self):
         self.pos = Point(9, 9)
@@ -72,7 +72,7 @@ class Food:
     def generate_random_pos(self):
         self.pos.x = random.randint(0, 19)
         self.pos.y = random.randint(0, 19)
-
+#класс еда с рандомным весом
 class Different_Weigh_Food:
     def __init__(self):
         self.pos = Point(9, 9)
@@ -83,7 +83,7 @@ class Different_Weigh_Food:
     def generate_random_pos(self):
         self.pos.x = random.randint(0, 19)
         self.pos.y = random.randint(0, 19)
-
+#класс с исчезающей едой
 class DisappearingFood:
     def __init__(self):
         self.pos = Point(9, 9)
@@ -120,6 +120,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
         if event.type == pygame.KEYDOWN:
+            #проверяем нажатие клавиш
             if event.key == pygame.K_RIGHT:
                 snake.dx = 1
                 snake.dy = 0
