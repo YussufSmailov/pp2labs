@@ -2,7 +2,7 @@ import psycopg2
 
 current_user = ""
 
-# Подключение к базе
+
 conn = psycopg2.connect(
     database="postgres",
     user="postgres",
@@ -11,7 +11,7 @@ conn = psycopg2.connect(
     port=5432
 )
 
-# Запросы для создания таблиц
+
 query_create_table_users = """
     CREATE TABLE IF NOT EXISTS users(
         id SERIAL PRIMARY KEY,
