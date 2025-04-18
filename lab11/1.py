@@ -1,5 +1,6 @@
 import psycopg2
 import psycopg2
+import csv
 conn = psycopg2.connect(
     database="phone_book",
     host="localhost",
